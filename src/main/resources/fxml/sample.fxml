@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mtl.controller.Controller">
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="22.0" prefWidth="600.0" style="-fx-background-color: #43CD80;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar layoutY="-1.0" prefHeight="24.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="开始">
+                  <items>
+                    <MenuItem fx:id="connectionbt" mnemonicParsing="false" onAction="#onConnectionBtClick" text="连接" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="操作">
+                  <items>
+                        <MenuItem mnemonicParsing="false" text="查看" />
+                        <MenuItem mnemonicParsing="false" text="添加" />
+                        <MenuItem mnemonicParsing="false" text="更新" />
+                    <MenuItem mnemonicParsing="false" text="删除" />
+                        <MenuItem mnemonicParsing="false" text="刷新" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="帮助">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="关于" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="22.0" prefHeight="378.0" prefWidth="374.0" style="-fx-background-color: #FFE4E1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="22.0" />
+      <VBox layoutX="350.0" layoutY="22.0" prefHeight="378.0" prefWidth="250.0" style="-fx-background-color: #0000CD;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="22.0" />
+   </children>
+</AnchorPane>
