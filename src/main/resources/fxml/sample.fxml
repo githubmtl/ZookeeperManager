@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTreeView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mtl.controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mtl.controller.MainController">
    <children>
       <AnchorPane layoutX="-1.0" prefHeight="22.0" prefWidth="600.0" style="-fx-background-color: #43CD80;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -14,28 +18,128 @@
               <menus>
                 <Menu mnemonicParsing="false" text="开始">
                   <items>
-                    <MenuItem fx:id="connectionbt" mnemonicParsing="false" onAction="#onConnectionBtClick" text="连接" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="操作">
-                  <items>
-                        <MenuItem mnemonicParsing="false" text="查看" />
-                        <MenuItem mnemonicParsing="false" text="添加" />
-                        <MenuItem mnemonicParsing="false" text="更新" />
-                    <MenuItem mnemonicParsing="false" text="删除" />
-                        <MenuItem mnemonicParsing="false" text="刷新" />
+                    <MenuItem fx:id="connectionbt" mnemonicParsing="false" onAction="#btnConnectionOnClick" text="连接信息" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="帮助">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="关于" />
+                    <MenuItem fx:id="btnabout" mnemonicParsing="false" onAction="#aboutOnClick" text="关于" />
                   </items>
                 </Menu>
               </menus>
             </MenuBar>
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="22.0" prefHeight="378.0" prefWidth="374.0" style="-fx-background-color: #FFE4E1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="22.0" />
-      <VBox layoutX="350.0" layoutY="22.0" prefHeight="378.0" prefWidth="250.0" style="-fx-background-color: #0000CD;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="22.0" />
+      <AnchorPane layoutY="22.0" prefHeight="378.0" prefWidth="374.0" style="-fx-background-color: #FFE4E1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="22.0">
+         <children>
+            <JFXTreeView fx:id="nodeTree" prefHeight="378.0" prefWidth="350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children></AnchorPane>
+      <VBox layoutX="350.0" layoutY="22.0" prefHeight="378.0" prefWidth="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="22.0">
+         <children>
+            <Label fx:id="name" onMouseClicked="#labelOnclick" prefHeight="20.0" prefWidth="300.0" text="name:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="data" onMouseClicked="#labelOnclick" prefHeight="20.0" prefWidth="300.0" text="data:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="cZxid" onMouseClicked="#labelOnclick" prefHeight="20.0" prefWidth="300.0" text="cZxid:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="mZxid" onMouseClicked="#labelOnclick" prefHeight="20.0" prefWidth="300.0" text="mZxid:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="pZxid" onMouseClicked="#labelOnclick" prefHeight="20.0" prefWidth="300.0" text="pZxid:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="ctime" onMouseClicked="#labelOnclick" prefHeight="20.0" prefWidth="300.0" text="ctime:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="mtime" onMouseClicked="#labelOnclick" prefHeight="20.0" prefWidth="300.0" text="mtime:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="dataVersion" onMouseClicked="#labelOnclick" prefHeight="20.0" prefWidth="300.0" text="dataVersion:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="cversion" onMouseClicked="#labelOnclick" prefHeight="20.0" prefWidth="300.0" text="cversion:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="aclversion" onMouseClicked="#labelOnclick" prefHeight="20.0" prefWidth="300.0" text="aclVersion:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="ephemeralOwner" onMouseClicked="#labelOnclick" prefHeight="20.0" prefWidth="300.0" text="ephemeralOwner:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="dataLength" onMouseClicked="#labelOnclick" prefHeight="20.0" prefWidth="300.0" text="dataLength:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="numChildren" onMouseClicked="#labelOnclick" prefHeight="20.0" prefWidth="300.0" text="numChildren:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+         </children></VBox>
    </children>
 </AnchorPane>

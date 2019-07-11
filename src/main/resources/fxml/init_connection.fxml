@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="TOP_RIGHT" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="212.0" prefWidth="415.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mtl.controller.ConnectionInfoController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="136.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="274.0" minWidth="10.0" prefWidth="274.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="229.0" minWidth="10.0" prefWidth="36.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label alignment="CENTER" prefHeight="60.0" prefWidth="208.0" text="IP地址：" />
+      <Label alignment="CENTER" prefHeight="60.0" prefWidth="209.0" text="端口：" GridPane.rowIndex="1" />
+      <Pane GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <JFXButton fx:id="btnyes" layoutX="138.0" layoutY="7.0" onAction="#btnYesOnClick" prefHeight="37.0" prefWidth="64.0" style="-fx-background-color: #00BFFF;" text="确认修改" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <JFXButton fx:id="btnmodify" layoutX="11.0" layoutY="8.0" onAction="#btnUpdateOnClick" prefHeight="37.0" prefWidth="64.0" style="-fx-background-color: #CD5C5C;" text="修改" />
+         </children>
+      </Pane>
+      <JFXTextField fx:id="ip" editable="false" style="-fx-background-color: #FFFFFF;" GridPane.columnIndex="1" />
+      <JFXTextField fx:id="port" editable="false" style="-fx-background-color: #FFFFFF;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+   </children>
+</GridPane>

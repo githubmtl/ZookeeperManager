@@ -22,10 +22,10 @@ public class ZookeeperConnection {
     private static ZooKeeper zooKeeper;
     private static String url="127.0.0.1:2181";
     public static synchronized ZooKeeper getZookeeper(){
-        if (zooKeeper==null){
+        if (zooKeeper==null||zooKeeper.getState()!= ZooKeeper.States.CONNECTED){
             final CountDownLatch countDownLatch=new CountDownLatch(1);
             try {
-                zooKeeper=new ZooKeeper(url, 30000, new Watcher() {
+                zooKeeper=new ZooKeeper(url, 15000, new Watcher() {
                     public void process(WatchedEvent event) {
                         if (event.getType()== Event.EventType.None&&event.getState()== Event.KeeperState.SyncConnected){
                             countDownLatch.countDown();
@@ -52,4 +52,19 @@ public class ZookeeperConnection {
     public static void setUrl(String connectionString){
         url=connectionString;
     }
+
+    public static String getUrl(){
+        return url;
+    }
+
+    public static void close(){
+        if (zooKeeper!=null&&zooKeeper.getState()== ZooKeeper.States.CONNECTED){
+            try {
+                zooKeeper.close();
+            }catch (InterruptedException e){
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
 }
