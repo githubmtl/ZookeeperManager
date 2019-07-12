@@ -1,17 +1,12 @@
 package com.mtl;
 
+import com.mtl.controller.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FilenameFilter;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 说明：
@@ -34,31 +29,31 @@ public class FxmlManager {
         return parents.get(name);
     }
 
-    public static void add(File file){
+    public static void add(String key,String url){
         try {
-            Parent p = FXMLLoader.load(file.toURI().toURL());
-            parents.put(file.getName(),p);
+            Parent p = FXMLLoader.load(Main.class.getResource(url));
+            parents.put(key,p);
         }catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    public static int addFromPath(String path){
-        URL resource = FxmlManager.class.getResource(path);
-        File file=new File(resource.getPath());
-        File[] files = file.listFiles(new FilenameFilter() {
-            public boolean accept(File dir, String name) {
-                if (name.endsWith(".fxml")&&name.startsWith("init"))
-                    return true;
-                return false;
+    public static int addFromPath(String config){
+        try {
+            InputStream resourceAsStream = Main.class.getResourceAsStream(config);
+            Properties properties=new Properties();
+            properties.load(resourceAsStream);
+            Iterator<Map.Entry<Object, Object>> iterator = properties.entrySet().iterator();
+            while (iterator.hasNext()){
+                Map.Entry<Object, Object> next = iterator.next();
+                if (next.getKey()!=null&&!next.getKey().equals("")){
+                    add(next.getKey().toString(), next.getValue().toString());
+                }
             }
-        });
-        if (files!=null&&files.length>0){
-            for (File f:files){
-                add(f);
-            }
+            return properties.size();
+        }catch (Exception e){
+            throw new RuntimeException("读取fxml文件错误！",e);
         }
-        return files.length;
     }
 
     public static Map<String,Parent> getAll(){

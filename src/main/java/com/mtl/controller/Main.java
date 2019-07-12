@@ -23,7 +23,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage)  throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/waiting.fxml"));
-        primaryStage.setScene(new Scene(root, 400, 269));
+        primaryStage.setScene(new Scene(root, 400, 260));
         primaryStage.setResizable(false);
         primaryStage.setTitle("Zookeeper Manager");
         primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {

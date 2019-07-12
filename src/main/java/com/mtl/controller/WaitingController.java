@@ -92,7 +92,7 @@ public class WaitingController {
                         stage.getIcons().add(new Image(getClass().getClassLoader().getResourceAsStream("zk.jpg")));
                         stage.setTitle("Zookeeper Manager");
                         try {
-                            Parent root = FXMLLoader.load(getClass().getResource("/fxml/sample.fxml"));
+                            Parent root = FXMLLoader.load(Main.class.getResource("/fxml/sample.fxml"));
                             stage.setScene(new Scene(root, 600, 400));
                         }catch (IOException e){
                             logger.error("初始化失败！",e);

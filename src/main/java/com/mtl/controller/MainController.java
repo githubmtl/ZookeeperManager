@@ -74,7 +74,7 @@ public class MainController implements Initializable {
 
 
     public void initialize(URL location, ResourceBundle resources) {
-        int initFxmls = FxmlManager.addFromPath("/fxml");
+        int initFxmls = FxmlManager.addFromPath("/init_fxml.properties");
         if (logger.isDebugEnabled()){
             logger.debug("加载了["+initFxmls+"]个初始页面");
             logger.debug(FxmlManager.getAll().toString());
